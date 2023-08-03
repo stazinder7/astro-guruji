@@ -1,0 +1,70 @@
+.dropdown_toogle {
+    position: relative;
+    &:hover , &:focus, &:focus-within {
+        .dropdown {
+            top: 50px;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+.dropdown_button {
+    border: 1px solid $borderColor;
+    height: 40px;
+    border-radius: 10px;
+    background: transparent;
+    color: $textcolor;
+    cursor: pointer;
+    font-size: 4 + $fs-value;
+    padding: 0 12px;
+    @include FlexBox(center, center);
+    .icon {
+        background: $whiteColor url("../img/down.svg") center no-repeat;
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-left: 6px;
+    }
+}
+
+.dropdown {
+    position: absolute;
+    background: $whiteColor;
+    box-shadow: $boxShadow;
+    padding: 20px 0;
+    top: 100px;
+    @include borderRadius(8px);
+    min-width: 144px;
+    right: -10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    li {
+        @include basic(left, 100%);
+
+        a {
+            @include basic(left, 100%);
+            color: $textcolor;
+            font-size: 4 + $fs-value;
+            padding: 5px 24px;
+            transition: 0.5s ease-in-out;
+            white-space: nowrap;
+            font-weight: 500;
+            &.active,
+            &:hover {
+                background-color: $secondarycolor;
+            }
+        }
+        &::after {
+            display: block;
+            content: " ";
+            position: absolute;
+            right: 16px;
+            top: -5px;
+            background: $whiteColor;
+            width: 16px;
+            height: 16px;
+            transform: rotate(45deg);
+        }
+    }
+}

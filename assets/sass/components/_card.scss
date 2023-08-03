@@ -1,0 +1,7 @@
+.card {
+    background: $whiteColor;
+    @include boxShadow(0, 8px, 24px, 0px, rgba(0, 0, 0, 0.1));
+    @include borderRadius(16px);
+    @include basic(left, 100%);
+    padding: 64px 50px 60px 50px;
+}

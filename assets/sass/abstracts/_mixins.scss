@@ -1,0 +1,23 @@
+@mixin basic($par, $par1) {
+    float: $par;
+    width: $par1;
+}
+@mixin background($par, $par1, $par2) {
+    background-position: $par;
+    background-repeat: $par1;
+    background-size: $par2;
+}
+@mixin FlexBox($align , $justify) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+@mixin borderRadius($radius) {
+    border-radius: $radius;
+}
+@mixin boxShadow( $offsetX, $offsetY, $blurRadius, $spreadRadius, $color) {
+    box-shadow: $offsetX $offsetY $blurRadius $spreadRadius $color;
+}
+@mixin border($width , $color) {
+    border: $width solid $color;
+}

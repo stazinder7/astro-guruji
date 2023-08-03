@@ -1,0 +1,27 @@
+footer{
+    @include basic(left, 100%);
+    padding: 65px 0;
+    background-color: $GreyBgcolor;
+    h4{
+        @include basic(left, 100%);
+        margin-bottom: 15px;
+        text-transform: uppercase
+    }
+    .footer_list{
+        @include basic(left, 100%);
+        li{
+            @include basic(left, 100%);
+            a{
+                @include basic(left, auto);
+                margin-top: 15px;
+                color: $textcolor;
+                font-size: 4 + $fs-value;
+                opacity: 0.8;
+                transition: 0.5s ease-in-out;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

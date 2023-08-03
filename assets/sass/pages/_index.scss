@@ -1,0 +1,344 @@
+.banner {
+  @include basic(left, 100%);
+  min-height: 480px;
+  @include background(center, no-repeat, cover);
+  @include FlexBox(center, start);
+  .banner_content {
+    max-width: 450px;
+    h1 {
+      font-size: 4 * $fs-value;
+      line-height: 1.2;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(34, 34, 34, 0.4);
+      @include basic(left, 100%);
+    }
+    p {
+      font-size: 2 * $fs-value;
+      line-height: 1.2;
+      @include basic(left, 100%);
+      margin-bottom: 25px;
+    }
+    .overview {
+      @include basic(left, 100%);
+      @include FlexBox(center, start);
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+    .button {
+      font-size: 8 + $fs-value;
+      width: 240px;
+      min-height: 55px;
+    }
+  }
+}
+
+.section_block {
+  padding: 65px 0;
+  @include basic(left, 100%);
+  .section_title {
+    font-size: 3.6 * $fs-value;
+    line-height: 48px;
+    @include basic(left, 100%);
+    @include FlexBox(center, center);
+  }
+  .section_subtitle {
+    font-size: 2 * $fs-value;
+    @include basic(left, 100%);
+    margin-top: 5px;
+  }
+  .about_content {
+    margin-top: 40px;
+    @include basic(left, 100%);
+    .para {
+      @include basic(left, 100%);
+      font-size: 6 + $fs-value;
+      color: $textcolor1;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.nav_tab {
+  @include FlexBox(center, center);
+  @include basic(left, 100%);
+  margin-bottom: 24px;
+  gap: 15px;
+  li {
+    a {
+      background-color: $secondarycolor;
+      @include FlexBox(center, center);
+      @include borderRadius(8px);
+      color: $textcolor;
+      font-size: 6 + $fs-value;
+      min-height: 40px;
+      padding: 0 16px;
+      transition: 0.5s ease-in-out;
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: $textcolor;
+        color: $whiteColor;
+      }
+    }
+  }
+}
+
+.tab_content_block {
+  @include basic(left, 100%);
+  .tab_content {
+    @include basic(left, 100%);
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+.pblm_sldier,
+.pblm_sldier1 {
+  .slider_content {
+    max-width: 161px;
+    .slider_content_text {
+      position: absolute;
+      z-index: 1;
+      bottom: 12px;
+      @include basic(left, 100%);
+      color: $whiteColor;
+      padding: 20px 8px;
+      text-align: center;
+      h4 {
+        font-size: 4 + $fs-value;
+        @include basic(left, 100%);
+        line-height: 32px;
+      }
+      p {
+        font-size: 2 + $fs-value;
+        @include basic(left, 100%);
+        line-height: 16px;
+        opacity: 0.8;
+      }
+    }
+  }
+  .owl-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    button {
+      width: 40px;
+      height: 40px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+      @include borderRadius(50%);
+      position: absolute;
+      background-color: $whiteColor !important;
+      span {
+        @include basic(left, 100%);
+        @include background(center, no-repeat, 10px);
+        font-size: 0 !important;
+        height: 100%;
+      }
+      &.disabled {
+        opacity: 0;
+      }
+    }
+    button.owl-prev {
+      left: -20px;
+      span {
+        background-image: url("../img/arrow_left.svg") !important;
+      }
+    }
+    button.owl-next {
+      right: -20px;
+      span {
+        background-image: url("../img/arrow_right.svg") !important;
+      }
+    }
+  }
+}
+
+span.open_toggle {
+  width: 32px;
+  height: 32px;
+  background: $textcolor;
+  display: flex;
+  border-radius: 50%;
+  @include FlexBox(center, center);
+  margin-left: 15px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  img {
+    max-height: 16px;
+  }
+  &.active {
+    transform: rotate(180deg);
+  }
+}
+.block {
+  @include basic(none, 100%);
+  @include FlexBox(center, flex-start);
+  margin-top: 32px;
+  .content {
+    padding-left: 24px;
+    h3 {
+      @include basic(left, 100%);
+      font-size: 2 * $fs-value + 6;
+      line-height: 36px;
+      margin-bottom: 5px;
+    }
+    p {
+      @include basic(left, 100%);
+      font-size: $fs-value + 6;
+      line-height: 24px;
+    }
+  }
+}
+
+.highlight {
+  @include FlexBox(center, center);
+  position: relative;
+  &::after {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #e2c9ff;
+    top: 50%;
+    bottom: 0;
+    content: "";
+    transform: translateY(-50%);
+  }
+  img {
+    z-index: 1;
+    position: relative;
+    background: #fff;
+  }
+}
+.card.testomonial {
+  padding: 24px;
+  margin-top: 40px;
+  span.userimg {
+    width: 56px;
+    height: 56px;
+    @include basic(left, 56px);
+    @include borderRadius(50%);
+    overflow: hidden;
+    img {
+      object-fit: cover;
+    }
+  }
+  .content {
+    @include basic(left, calc(100% - 56px));
+    padding-left: 16px;
+    h4 {
+      font-size: 6 + $fs-value;
+    }
+    p {
+      font-size: 2 + $fs-value;
+      line-height: 20px;
+    }
+    .rating {
+      @include basic(left, 100%);
+      margin-bottom: 18px;
+      @include FlexBox(center, flex-start);
+      gap: 16px;
+      span.star {
+        float: left;
+        height: 16px;
+        background-repeat-x: repeat;
+        background-repeat-y: no-repeat;
+        background-size: 16px;
+        &.star5 {
+          width: 81px;
+        }
+        &.star4 {
+          width: 64px;
+        }
+      }
+      .time {
+        font-size: 2 + $fs-value;
+      }
+    }
+  }
+}
+
+.tags {
+  margin-top: 8px;
+  @include basic(left, 100%);
+  li {
+    @include basic(left, auto);
+    margin-left: 0;
+    margin-right: 8px;
+    margin-top: 8px;
+    a {
+      border: 1px solid #b373ff;
+      border-radius: 50px;
+      padding: 4px 12px;
+      color: #b373ff;
+      font-size: 2 + $fs-value;
+      @include basic(left, auto);
+      transition: 0.5s ease-in-out;
+      &:hover {
+        background-color: #b373ff;
+        color: $whiteColor;
+      }
+    }
+  }
+}
+
+.talk_now {
+  min-height: 400px;
+  @include FlexBox(center, center);
+  @include background(center, no-repeat, cover);
+  .button {
+    font-size: 8 + $fs-value;
+    max-width: 314px;
+    min-height: 55px;
+    width: 100%;
+    border-color: transparent !important ;
+  }
+}
+.block_area {
+  @include basic(left, 100%);
+  margin-top: 30px;
+  img {
+    @include basic(left, 100%);
+    max-height: 280px;
+    object-fit: contain;
+  }
+  .block_area_content {
+    @include basic(left, 100%);
+    h3 {
+      font-size: 2 * $fs-value;
+      @include basic(left, 100%);
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 6 + $fs-value;
+      color: #707070;
+      @include basic(left, 100%);
+    }
+  }
+}
+.block_area1 {
+  img {
+    max-height: 160px;
+  }
+  .block_area_content {
+    margin-top: 25px;
+    h3 {
+      font-size: 8 + $fs-value;
+    }
+  }
+}
+
+.talk_now {
+  .section_title {
+    font-size: 5 * $fs-value + 2;
+    color: $whiteColor;
+    margin-bottom: 80px;
+  }
+}

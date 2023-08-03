@@ -1,0 +1,11 @@
+.button {
+    padding: 12px 15px;
+    @include borderRadius(8px);
+    @include border(1px, $primaryColor);
+    color: set-color($primaryColor) !important;
+    cursor: pointer;
+   
+}
+.main_button {
+    background: linear-gradient(180deg, $primaryColor1 0%, $primaryColor2 100%);
+}

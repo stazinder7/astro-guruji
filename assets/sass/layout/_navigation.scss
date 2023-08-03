@@ -1,0 +1,7 @@
+
+.right_nav {
+    @include basic(right, auto);
+    @include FlexBox(center, space-between);
+    gap: 15px;
+    
+}

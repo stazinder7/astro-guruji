@@ -1,0 +1,42 @@
+header {
+    @include basic(left, 100%);
+    padding: 20px 0;
+    z-index: 100;
+    background: $whiteColor;
+    transition: position 10s;
+    .container {
+        @include FlexBox(center, space-between);
+        .logo_part {
+            @include basic(left, auto);
+            a {
+                @include basic(left, 100%);
+                @include FlexBox(center, start);
+                img {
+                    @include basic(left, auto);
+                    max-height: 22.5px;
+                }
+                span {
+                    margin-left: 45px;
+                    font-size: 6 + $fs-value;
+                    color: $textcolor;
+                }
+            }
+        }
+    }
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0
+       
+    }
+    span.user_info {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        float: left;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+    }
+}
